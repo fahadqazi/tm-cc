@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import ApplicantCard from './applicantCard';
+import ApplicantCardList from './applicantCardList'
 // import cardData from './cards';
 
 var cards = [
@@ -60,14 +60,17 @@ var applicants = [
 
 class App extends Component {
 
+	calculateCards = () => {
+		console.log('hello');
+	}
 
   render() {
     return (
-      <div style={{width: '80%'}}>
-        Hello
-        <ApplicantCard 
-          data={applicants[0]}
-        />
+      <div style={{height: 800, width: 900, border:'2px solid goldenrod', margin: 'auto' }}>
+				<ApplicantCardList 
+					data={applicants}
+					calculateCards={this.calculateCards}
+				/>
       </div>
     );
   }
