@@ -10,7 +10,6 @@ class ApplicantCard extends React.Component{
 }
 
 calculator(){
-  console.log('hi')
   this.props.calculateCards(this.props.data)
 }
 

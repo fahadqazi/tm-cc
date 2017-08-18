@@ -61,9 +61,7 @@ var applicants = [
 class App extends Component {
 
 	calculateCards = (data) => {
-		console.log('hello');
 		console.log(data.firstName)
-		// console.log(data)
 	}
 
   render() {
