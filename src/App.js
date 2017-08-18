@@ -60,17 +60,21 @@ var applicants = [
 
 class App extends Component {
 
-	calculateCards = () => {
+	calculateCards = (data) => {
 		console.log('hello');
+		console.log(data.firstName)
+		// console.log(data)
 	}
 
   render() {
     return (
-      <div style={{height: 800, width: 900, border:'2px solid goldenrod', margin: 'auto' }}>
-				<ApplicantCardList 
-					data={applicants}
-					calculateCards={this.calculateCards}
-				/>
+			<div style={{height: 800, width: 900, border:'2px solid goldenrod', margin: 'auto' }}>
+				<div style={{display: 'flex', flexDirection: 'column'}}>
+					<ApplicantCardList 
+						data={applicants}
+						calculateCards={this.calculateCards}
+					/>
+				</div>
       </div>
     );
   }
