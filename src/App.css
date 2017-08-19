@@ -43,3 +43,31 @@
 .details:hover {
   opacity:1;
 }
+
+.creditCard1 {
+  height: 200px;
+  width: 300px;
+  background: linear-gradient(aquamarine, grey);
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 3%;
+}
+
+.creditCard2 {
+  height: 200px;
+  width: 300px;
+  background: linear-gradient(#7FBEFF, #DD1616);
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 3%;
+}
+
+.creditCard3 {
+  height: 200px;
+  width: 300px;
+  background: linear-gradient(#0A2EEA, #20266D);
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 3%;
+  color: #fff;
+}

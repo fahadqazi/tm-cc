@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import ApplicantCardList from './applicantCardList'
+import CreditCard from './CreditCard';
 // import cardData from './cards';
 
 var cards = [
@@ -101,9 +102,10 @@ class App extends Component {
 						calculateCards={this.calculateCards}
 					/>
 				</div>
-				
+				<hr/>
+				<div style={{display: 'flex', flexDirection: 'row'}}>
 				<div>
-					{this.state.studentCard ? <h1>Studentss</h1>: null}
+					{this.state.studentCard ? <CreditCard cards={cards}/>: null}
 				</div>
 
 				<div>
@@ -112,6 +114,7 @@ class App extends Component {
 
 			<div>
 			{this.state.liquidCard ? <h1>LIQUID</h1>: null}
+		</div>
 		</div>
 
       </div>
