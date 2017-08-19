@@ -51,6 +51,7 @@
   border: 1px solid black;
   box-shadow: 5px 5px 5px #888888;
   border-radius: 3%;
+  margin: 10px;
 }
 
 .creditCard2 {
@@ -60,6 +61,7 @@
   border: 1px solid black;
   box-shadow: 5px 5px 5px #888888;
   border-radius: 3%;
+  margin: 10px;
 }
 
 .creditCard3 {
@@ -70,4 +72,5 @@
   box-shadow: 5px 5px 5px #888888;
   border-radius: 3%;
   color: #fff;
+  margin: 10px;
 }

@@ -3,22 +3,26 @@ import React, { Component } from 'react';
 import './App.css';
 import ApplicantCardList from './applicantCardList'
 import CreditCard from './CreditCard';
+import CreditCardList from './CreditCardList';
 // import cardData from './cards';
 
 var cards = [
 	{
+		type: 'Student Life Card',
 		apr: 18.9,
 		balanceTransfer: 0,
 		offerDuration: 6,
 		creditAvailable: 1200
 	},
 	{
+		type: 'Anywhere Card',
 		apr: 33.9,
 		balanceTransfer: 0,
 		offerDuration: 0,
 		creditAvailable: 300
 	},
 	{
+		type: 'Liquid Card',
 		apr: 33.9,
 		balanceTransfer: 12,
 		offerDuration: 6,
@@ -97,25 +101,36 @@ class App extends Component {
     return (
 			<div className='app-container'>
 				<div>
+					
 					<ApplicantCardList 
 						data={applicants}
 						calculateCards={this.calculateCards}
 					/>
+
 				</div>
+
 				<hr/>
-				<div style={{display: 'flex', flexDirection: 'row'}}>
-				<div>
-					{this.state.studentCard ? <CreditCard cards={cards}/>: null}
+
+				<div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+				
+					<CreditCardList 
+						cards={cards}
+						isShown={this.state}
+					/>
+
+					<div>
+						{this.state.studentCard ? <CreditCard cards={cards}/>: null}
+					</div>
+
+					<div>
+						{this.state.anywhereCard ? <h1>FREEEE</h1>: null}
+					</div>
+
+					<div>
+						{this.state.liquidCard ? <h1>LIQUID</h1>: null}
+					</div>
+
 				</div>
-
-				<div>
-				{this.state.anywhereCard ? <h1>FREEEE</h1>: null}
-			</div>
-
-			<div>
-			{this.state.liquidCard ? <h1>LIQUID</h1>: null}
-		</div>
-		</div>
 
       </div>
     );
