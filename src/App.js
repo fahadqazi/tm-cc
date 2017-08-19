@@ -28,8 +28,8 @@ var cards = [
 var applicants = [
 	{
 		title: 'Mr',
-		firstName: 'Ollie',
-		lastName: 'Murphee',
+		firstName: 'OLLIE',
+		lastName: 'MURPHEE',
 		dob: '01/07/1970',
 		income: 34000,
 		employment: 'Full time',
@@ -38,8 +38,8 @@ var applicants = [
 	},
 	{
 		title: 'Miss',
-		firstName: 'Elizabeth',
-		lastName: 'Edmundson',
+		firstName: 'ELIZABETH',
+		lastName: 'EDMUNDSON',
 		dob: '29/06/1984',
 		income: 17000,
 		employment: 'Student',
@@ -48,8 +48,8 @@ var applicants = [
 	},
 	{
 		title: 'Mr',
-		firstName: 'Trevor',
-		lastName: 'Rieck',
+		firstName: 'TREVOR',
+		lastName: 'RIECK',
 		dob: '07/09/1990',
 		income: 15000,
 		employment: 'Part Time',

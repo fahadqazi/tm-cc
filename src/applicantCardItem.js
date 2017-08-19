@@ -16,14 +16,18 @@ calculator(){
 render(){
   console.log(this.props.calculateCards);
   return(
-    <div style={styles.container}
+    <div className='cardListItem'
     onClick={this.calculator}
     >
-      <h4>{`${this.props.data.title} ${this.props.data.firstName} ${this.props.data.lastName}`}</h4>
-      <h5>{this.props.data.dob}</h5>
-      <p><i>{`Income: £${this.props.data.income}`}</i></p>
-      <p><i>{`Employment: ${this.props.data.employment}`}</i></p>
-      <p>{`Address: ${this.props.data.houseNo}, ${this.props.data.postCode}`}</p>
+      <div className='nameBorder'>
+      <p className='cardName'>{`${this.props.data.firstName} ${this.props.data.lastName}`}</p>
+      </div>
+      <div className='details'>
+      <span className='textSize'>{this.props.data.dob}</span><br/>
+      <span className='textSize'>{`Income: £${this.props.data.income}`}</span><br/>
+      <span className='textSize'>{`Employment: ${this.props.data.employment}`}</span><br/>
+      <span className='textSize'>{`Address: ${this.props.data.houseNo}, ${this.props.data.postCode}`}</span><br/>
+      </div>
     </div>
   );
 }
