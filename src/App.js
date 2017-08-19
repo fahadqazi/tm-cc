@@ -60,8 +60,27 @@ var applicants = [
 
 class App extends Component {
 
+	showStudent(data){
+		console.log('student: ', data.employment)
+		return data.employment === 'Student'
+	}
+
+	anywhereCard(data){
+		return true
+	}
+
+	liquidCard(data){
+		console.log(data.income)
+		return data.income > 16000
+	}
+
 	calculateCards = (data) => {
 		console.log(data.firstName)
+		this.setState({
+			studentCard: this.showStudent(data),
+			anywhereCard: this.anywhereCard(data),
+			liquidCard: this.liquidCard(data)
+		})
 	}
 
   render() {
