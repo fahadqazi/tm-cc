@@ -60,6 +60,15 @@ var applicants = [
 
 class App extends Component {
 
+	constructor(props){
+		super(props)
+		this.state = {
+			studentCard: null,
+			anywhereCard: null,
+			liquidCard: null
+		}
+	}
+
 	showStudent(data){
 		console.log('student: ', data.employment)
 		return data.employment === 'Student'
@@ -85,13 +94,26 @@ class App extends Component {
 
   render() {
     return (
-			<div style={{height: 800, width: 900, border:'2px solid goldenrod', margin: 'auto' }}>
-				<div style={{display: 'flex', flexDirection: 'column'}}>
+			<div className='app-container'>
+				<div>
 					<ApplicantCardList 
 						data={applicants}
 						calculateCards={this.calculateCards}
 					/>
 				</div>
+				
+				<div>
+					{this.state.studentCard ? <h1>Studentss</h1>: null}
+				</div>
+
+				<div>
+				{this.state.anywhereCard ? <h1>FREEEE</h1>: null}
+			</div>
+
+			<div>
+			{this.state.liquidCard ? <h1>LIQUID</h1>: null}
+		</div>
+
       </div>
     );
   }

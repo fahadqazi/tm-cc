@@ -3,6 +3,7 @@ import ApplicantCardItem from './applicantCardItem'
 
 class ApplicantCardList extends React.Component{
 
+  //Todo: better naming and clean up
   mapper() {
     return this.props.data.map(item => {
       return (<ApplicantCardItem 
@@ -14,7 +15,7 @@ class ApplicantCardList extends React.Component{
   }
   render(){
     return(
-      <div style={{display: 'flex', flexDirection:'row'}}>
+      <div className='cardList'>
         {this.mapper()}
       </div>
       
