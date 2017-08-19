@@ -38,7 +38,7 @@ class CreditCardItem extends React.Component{
             <p>{`APR: ${this.props.card.apr}`}</p>
             <p>{`Balance Transfer: ${this.props.card.balanceTransfer}`}</p>
             <p>{`Offer duration: ${this.props.card.offerDuration}`}</p>
-            <p>{`Credit Available: ${this.props.card.creditAvailable}`}</p>
+            <p>{`Credit Available: £${this.props.card.creditAvailable}`}</p>
           </div>
         </div>
 

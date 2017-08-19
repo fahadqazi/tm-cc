@@ -6,6 +6,7 @@ class CreditCardList extends React.Component{
   mapper() {
     return this.props.cards.map(item => {
       return (<CreditCardItem 
+                key={item.type}
                 card={item}
                 isShown={this.props.isShown}
                 add={this.props.add}

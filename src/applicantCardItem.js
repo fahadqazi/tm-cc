@@ -14,7 +14,6 @@ calculator(){
 }
 
 render(){
-  console.log(this.props.calculateCards);
   return(
     <div className='cardListItem'
     onClick={this.calculator}

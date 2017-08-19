@@ -1,7 +1,7 @@
 import React from 'react';
 import ApplicantCardItem from './applicantCardItem'
 
-class ApplicantCardList extends React.Component{
+class ApplicantList extends React.Component{
 
   //Todo: better naming and clean up
   mapper() {
@@ -23,4 +23,4 @@ class ApplicantCardList extends React.Component{
   }
 }
 
-export default ApplicantCardList;
+export default ApplicantList;

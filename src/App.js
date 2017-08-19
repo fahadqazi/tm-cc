@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import ApplicantCardList from './applicantCardList'
-import CreditCard from './CreditCard';
+import ApplicantList from './applicantList'
+
 import CreditCardList from './CreditCardList';
-// import cardData from './cards';
+
 
 var cards = [
 	{
@@ -78,7 +78,6 @@ class App extends Component {
 	}
 
 	showStudent(data){
-		// console.log('student: ', data.employment)
 		return data.employment === 'Student'
 	}
 
@@ -92,7 +91,6 @@ class App extends Component {
 	}
 
 	calculateCards = (data) => {
-		// console.log(data.firstName)
 		this.setState({
 			studentCard: this.showStudent(data),
 			anywhereCard: this.anywhereCard(data),
@@ -108,7 +106,7 @@ class App extends Component {
     return (
 			<div className='app-container'>
 					//todo: name
-					<ApplicantCardList 
+					<ApplicantList 
 						data={applicants}
 						calculateCards={this.calculateCards}
 					/>
