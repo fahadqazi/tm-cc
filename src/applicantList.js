@@ -1,12 +1,12 @@
 import React from 'react';
-import ApplicantCardItem from './applicantCardItem'
+import ApplicantListItem from './applicantListItem'
 
 class ApplicantList extends React.Component{
 
   //Todo: better naming and clean up
   mapper() {
     return this.props.data.map(item => {
-      return (<ApplicantCardItem 
+      return (<ApplicantListItem 
                 data={item}
                 key={item.houseNo}
                 calculateCards={this.props.calculateCards}

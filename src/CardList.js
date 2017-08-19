@@ -1,11 +1,11 @@
 import React from 'react';
-import CreditCardItem from './CreditCardItem';
+import CardListItem from './CardListItem';
 
-class CreditCardList extends React.Component{
+class CardList extends React.Component{
 
   mapper() {
     return this.props.cards.map(item => {
-      return (<CreditCardItem 
+      return (<CardListItem 
                 key={item.type}
                 card={item}
                 isShown={this.props.isShown}
@@ -23,4 +23,4 @@ class CreditCardList extends React.Component{
   }
 }
 
-export default CreditCardList;
+export default CardList;

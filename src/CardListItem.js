@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CreditCardItem extends React.Component{
+class CardListItem extends React.Component{
 
   checkType(type){
     switch(type){
@@ -21,16 +21,13 @@ class CreditCardItem extends React.Component{
   render(){
     const showCard = this.props.isShown
    
-   
-
-
     return (
-      <div style={{height: 250}}
-        onClick={this.props.add}
-      >
+      <div style={{height: 250}}>
         { showCard[this.props.card.type] ? 
           
-          <div className={this.checkType(this.props.card.type)}>
+          <div className={[this.checkType(this.props.card.type)]}
+            onClick={this.props.add}
+          >
           <div className="creditCardName">
             <h3>
               {this.props.card.title}
@@ -49,4 +46,4 @@ class CreditCardItem extends React.Component{
   }
 }
 
-export default CreditCardItem;
+export default CardListItem;

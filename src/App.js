@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ApplicantList from './applicantList'
 
-import CreditCardList from './CreditCardList';
+import CardList from './CardList';
 
 
 var cards = [
@@ -86,7 +86,6 @@ class App extends Component {
 	}
 
 	liquidCard(data){
-		console.log(data.income)
 		return data.income > 16000
 	}
 
@@ -105,7 +104,7 @@ class App extends Component {
   render() {
     return (
 			<div className='app-container'>
-					//todo: name
+
 					<ApplicantList 
 						data={applicants}
 						calculateCards={this.calculateCards}
@@ -113,7 +112,7 @@ class App extends Component {
 
 				<hr/>
 				
-					<CreditCardList 
+					<CardList 
 						cards={cards}
 						isShown={this.state}
 						add={this.add}
