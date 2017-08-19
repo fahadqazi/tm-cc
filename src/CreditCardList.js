@@ -8,6 +8,7 @@ class CreditCardList extends React.Component{
       return (<CreditCardItem 
                 card={item}
                 isShown={this.props.isShown}
+                add={this.props.add}
             />)
     })
   }

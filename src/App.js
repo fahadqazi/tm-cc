@@ -8,25 +8,28 @@ import CreditCardList from './CreditCardList';
 
 var cards = [
 	{
-		type: 'Student Life Card',
+		title: 'Student Life Card',
 		apr: 18.9,
 		balanceTransfer: 0,
 		offerDuration: 6,
-		creditAvailable: 1200
+		creditAvailable: 1200,
+		type: 'studentCard'
 	},
 	{
-		type: 'Anywhere Card',
+		title: 'Anywhere Card',
 		apr: 33.9,
 		balanceTransfer: 0,
 		offerDuration: 0,
-		creditAvailable: 300
+		creditAvailable: 300,
+		type: 'anywhereCard'
 	},
 	{
-		type: 'Liquid Card',
+		title: 'Liquid Card',
 		apr: 33.9,
 		balanceTransfer: 12,
 		offerDuration: 6,
-		creditAvailable: 3000
+		creditAvailable: 3000,
+		type: 'liquidCard'
 	}
 ];
 
@@ -75,7 +78,7 @@ class App extends Component {
 	}
 
 	showStudent(data){
-		console.log('student: ', data.employment)
+		// console.log('student: ', data.employment)
 		return data.employment === 'Student'
 	}
 
@@ -89,7 +92,7 @@ class App extends Component {
 	}
 
 	calculateCards = (data) => {
-		console.log(data.firstName)
+		// console.log(data.firstName)
 		this.setState({
 			studentCard: this.showStudent(data),
 			anywhereCard: this.anywhereCard(data),
@@ -97,40 +100,28 @@ class App extends Component {
 		})
 	}
 
+	add(){
+		console.log('adding')
+	}
+
   render() {
     return (
 			<div className='app-container'>
-				<div>
-					
+					//todo: name
 					<ApplicantCardList 
 						data={applicants}
 						calculateCards={this.calculateCards}
 					/>
 
-				</div>
-
 				<hr/>
-
-				<div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
 				
 					<CreditCardList 
 						cards={cards}
 						isShown={this.state}
+						add={this.add}
 					/>
 
-					<div>
-						{this.state.studentCard ? <CreditCard cards={cards}/>: null}
-					</div>
-
-					<div>
-						{this.state.anywhereCard ? <h1>FREEEE</h1>: null}
-					</div>
-
-					<div>
-						{this.state.liquidCard ? <h1>LIQUID</h1>: null}
-					</div>
-
-				</div>
+				<hr/>
 
       </div>
     );

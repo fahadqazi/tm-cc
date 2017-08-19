@@ -1,32 +1,50 @@
 import React from 'react';
-import visa_img from './Visa_Logo.png';
 
 class CreditCardItem extends React.Component{
 
   checkType(type){
-    console.log(type)
     switch(type){
-      case 'Student Life Card':
+      case 'studentCard':
         return 'creditCard1';
         break;
     
-      case 'Anywhere Card':
+      case 'anywhereCard':
         return 'creditCard2';
         break;
 
-      case 'Liquid Card':
+      case 'liquidCard':
       return 'creditCard3';
       break;
     }
   }
 
   render(){
-    console.log('type: ',this.props.card.type);
-    console.log(this.checkType(this.props.card.type))
-    return(
-      <div className={this.checkType(this.props.card.type)}>
-        <h3>{this.props.card.type}</h3>
+    const showCard = this.props.isShown
+   
+   
+
+
+    return (
+      <div style={{height: 250}}
+        onClick={this.props.add}
+      >
+        { showCard[this.props.card.type] ? 
+          
+          <div className={this.checkType(this.props.card.type)}>
+          <div className="creditCardName">
+            <h3>
+              {this.props.card.title}
+            </h3>
+            <p>{`APR: ${this.props.card.apr}`}</p>
+            <p>{`Balance Transfer: ${this.props.card.balanceTransfer}`}</p>
+            <p>{`Offer duration: ${this.props.card.offerDuration}`}</p>
+            <p>{`Credit Available: ${this.props.card.creditAvailable}`}</p>
+          </div>
+        </div>
+
+          : null}
       </div>
+
     );
   }
 }
