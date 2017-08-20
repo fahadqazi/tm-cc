@@ -173,7 +173,7 @@ class App extends Component {
 				<hr/>
 
 				<div>
-					<h3>{`Total Credit: ${this.calculateTotal()}`}</h3>
+					<h3>{`Total Credit Available: ${this.calculateTotal()}`}</h3>
 				</div>
       </div>
     );
