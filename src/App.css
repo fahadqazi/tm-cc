@@ -86,3 +86,12 @@
 .color{
   color: #19f6e8;
 }
+
+.cardList {
+  display: 'flex';
+  flexDirection: 'row';
+}
+
+.cardListContainer {
+  height: 250px;
+}

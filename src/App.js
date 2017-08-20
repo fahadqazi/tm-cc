@@ -108,8 +108,7 @@ class App extends Component {
 		})
 	}
 
-	// TODO: rename - refactor
-	add(data){
+	setSelected(data){
 		let type = data.type;
 		switch(type){
 			case 'anywhereCard':
@@ -153,7 +152,7 @@ class App extends Component {
 					<CardList 
 						cards={cards}
 						isShown={this.state}
-						add={this.add.bind(this)}
+						setSelected={this.setSelected.bind(this)}
 						selected={this.state}
 						calculateTotal={this.calculateTotal.bind(this)}
 					/>

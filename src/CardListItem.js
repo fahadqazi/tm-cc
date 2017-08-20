@@ -2,8 +2,7 @@ import React from 'react';
 
 class CardListItem extends React.Component{
 
-  //todo: rename 
-  checkType(type){
+  cardType(type){
     switch(type){
       case 'studentCard':
         return 'creditCard1';
@@ -16,14 +15,11 @@ class CardListItem extends React.Component{
     }
   }
 
-
-  //todo: name? use? 
-  styling(){
-    this.props.add(this.props.card)
+  handleClick(){
+    this.props.setSelected(this.props.card)
   }
 
-  //todo: rename 
-  styleCase(style){
+  isSelected(style){
     switch(style){
       case 'anywhereCard': 
         return this.props.isShown.anywhereSelected;
@@ -36,25 +32,21 @@ class CardListItem extends React.Component{
     }
   }
 
-  //rename
-  makeClassName(){
-    let style1 = this.checkType(this.props.card.type);
-    let newRes = this.styleCase(this.props.card.type)
-    let style2 = newRes ? 'selected' : '';
-    this.props.calculateTotal();
+  getClassNames(){
+    let style1 = this.cardType(this.props.card.type);
+    let style2 = this.isSelected(this.props.card.type) ? 'selected' : '';
     return `${style1} ${style2}`;
   }
 
-  //todo: fix styling and function calls
   render(){
     const showCard = this.props.isShown
    
     return (
-      <div style={{height: 250}}>
+      <div className='cardListContainer'>
         { showCard[this.props.card.type] ? 
           
-          <div className={this.makeClassName()}
-            onClick={this.styling.bind(this)}>
+          <div className={this.getClassNames()}
+            onClick={this.handleClick.bind(this)}>
           <div className="creditCardName">
             <h3>
               {this.props.card.title}

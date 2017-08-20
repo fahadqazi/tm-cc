@@ -3,24 +3,23 @@ import CardListItem from './CardListItem';
 
 class CardList extends React.Component{
 
-  mapper() {
+  cardList() {
     return this.props.cards.map(item => {
       return (<CardListItem 
                 key={item.type}
                 card={item}
                 isShown={this.props.isShown}
-                add={this.props.add}
+                setSelected={this.props.setSelected}
                 selected={this.props.selected}
                 calculateTotal={this.props.calculateTotal}
-            />)
+            />);
     })
   }
 
-  //TODO: fix styling
   render(){
     return(
-      <div style={{display: 'flex', flexDirection: 'row'}}>
-          {this.mapper()}
+      <div className='cardList'>
+          {this.cardList()}
       </div>
     );
   }
