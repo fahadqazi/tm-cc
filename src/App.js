@@ -73,7 +73,11 @@ class App extends Component {
 		this.state = {
 			studentCard: null,
 			anywhereCard: null,
-			liquidCard: null
+			liquidCard: null,
+			studentSelected: false,
+			anywhereSelected: false,
+			liquidSelected: false,
+			total: 0
 		}
 	}
 
@@ -93,12 +97,49 @@ class App extends Component {
 		this.setState({
 			studentCard: this.showStudent(data),
 			anywhereCard: this.anywhereCard(data),
-			liquidCard: this.liquidCard(data)
+			liquidCard: this.liquidCard(data),
 		})
 	}
 
-	add(){
-		console.log('adding')
+	add(data){
+		let type = data.type;
+		switch(type){
+			case 'anywhereCard':
+				this.setState(() => {
+					return {anywhereSelected: !this.state.anywhereSelected}
+				});
+				break;
+			case 'studentCard': 
+				this.setState(() => {
+					return {studentSelected: !this.state.studentSelected}
+				});
+				break;
+			case 'liquidCard':
+				this.setState(() => {
+					return {liquidSelected: !this.state.liquidSelected}
+				});
+				break;
+		}
+	}
+
+	calculateTotal(){
+		// let total = 0;
+		// let anywhere = this.state.anywhereSelected;
+		let anywhere = this.state.anywhereSelected ? cards.filter(item => item.type === 'anywhereCard')[0].creditAvailable : 0;
+		// console.log(anywhere1);
+		// let student = this.state.studentSelected;
+		let student = this.state.studentSelected ? cards.filter(item => item.type === 'studentCard')[0].creditAvailable : 0;
+		// console.log(student1);
+		// let liquid = this.state.liquidSelected;
+		let liquid = this.state.liquidSelected ? cards.filter(item => item.type === 'liquidCard')[0].creditAvailable : 0;
+		// console.log(liquid1);
+		let total = anywhere + liquid + student;
+		console.log(total);
+		return total;
+		this.setState({
+			total: total
+		})
+		// console.log(anywhere1,liquid1, student1);
 	}
 
   render() {
@@ -115,11 +156,16 @@ class App extends Component {
 					<CardList 
 						cards={cards}
 						isShown={this.state}
-						add={this.add}
+						add={this.add.bind(this)}
+						selected={this.state}
+						calculateTotal={this.calculateTotal.bind(this)}
 					/>
 
 				<hr/>
 
+				<div>
+					<h3>{`Total Credit: ${this.calculateTotal()}`}</h3>
+				</div>
       </div>
     );
   }

@@ -10,6 +10,8 @@ class CardList extends React.Component{
                 card={item}
                 isShown={this.props.isShown}
                 add={this.props.add}
+                selected={this.props.selected}
+                calculateTotal={this.props.calculateTotal}
             />)
     })
   }

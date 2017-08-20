@@ -78,3 +78,7 @@
 .creditCardName{
   padding-left: 10px;
 }
+
+.selected {
+  border: 5px solid goldenrod;  
+}
