@@ -3,8 +3,7 @@ import ApplicantListItem from './applicantListItem'
 
 class ApplicantList extends React.Component{
 
-  //Todo: better naming and clean up
-  mapper() {
+  applicantList() {
     return this.props.data.map(item => {
       return (<ApplicantListItem 
                 data={item}
@@ -13,10 +12,11 @@ class ApplicantList extends React.Component{
             />)
     })
   }
+  
   render(){
     return(
       <div className='cardList'>
-        {this.mapper()}
+        {this.applicantList()}
       </div>
       
     );
