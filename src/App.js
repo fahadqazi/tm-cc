@@ -80,7 +80,7 @@ class App extends Component {
 		}
 	}
 
-	showStudent(data){
+	studentCard(data){
 		return data.employment === 'Student'
 	}
 
@@ -94,7 +94,7 @@ class App extends Component {
 
 	calculateCards = (data) => {
 		this.setState({
-			studentCard: this.showStudent(data),
+			studentCard: this.studentCard(data),
 			anywhereCard: this.anywhereCard(data),
 			liquidCard: this.liquidCard(data),
 		})
@@ -126,6 +126,8 @@ class App extends Component {
 				this.setState(() => {
 					return {liquidSelected: !this.state.liquidSelected}
 				});
+				break;
+			default:
 				break;
 		}
 	}

@@ -6,15 +6,12 @@ class CardListItem extends React.Component{
     switch(type){
       case 'studentCard':
         return 'creditCard1';
-        break;
-    
       case 'anywhereCard':
         return 'creditCard2';
-        break;
-
       case 'liquidCard':
-      return 'creditCard3';
-      break;
+        return 'creditCard3';
+      default:
+        break;
     }
   }
 
@@ -26,22 +23,17 @@ class CardListItem extends React.Component{
     switch(style){
       case 'anywhereCard': 
         return this.props.isShown.anywhereSelected;
-        break;
-
       case 'studentCard':
         return this.props.isShown.studentSelected;
-        break;
-      
       case 'liquidCard':
         return this.props.isShown.liquidSelected;
+      default:
         break;
-
     }
   }
 
   makeClassName(){
     let style1 = this.checkType(this.props.card.type);
-    let stylish = this.props.isShown
     let newRes = this.styleCase(this.props.card.type)
     let style2 = newRes ? 'selected' : '';
     this.props.calculateTotal();
