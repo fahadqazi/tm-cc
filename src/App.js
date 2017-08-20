@@ -77,7 +77,6 @@ class App extends Component {
 			studentSelected: false,
 			anywhereSelected: false,
 			liquidSelected: false,
-			total: 0
 		}
 	}
 
@@ -132,23 +131,10 @@ class App extends Component {
 	}
 
 	calculateTotal(){
-		// let total = 0;
-		// let anywhere = this.state.anywhereSelected;
-		let anywhere = this.state.anywhereSelected ? cards.filter(item => item.type === 'anywhereCard')[0].creditAvailable : 0;
-		// console.log(anywhere1);
-		// let student = this.state.studentSelected;
-		let student = this.state.studentSelected ? cards.filter(item => item.type === 'studentCard')[0].creditAvailable : 0;
-		// console.log(student1);
-		// let liquid = this.state.liquidSelected;
-		let liquid = this.state.liquidSelected ? cards.filter(item => item.type === 'liquidCard')[0].creditAvailable : 0;
-		// console.log(liquid1);
-		let total = anywhere + liquid + student;
-		console.log(total);
-		return total;
-		this.setState({
-			total: total
-		})
-		// console.log(anywhere1,liquid1, student1);
+		const anywhere = this.state.anywhereSelected ? cards.filter(item => item.type === 'anywhereCard')[0].creditAvailable : 0;
+		const student = this.state.studentSelected ? cards.filter(item => item.type === 'studentCard')[0].creditAvailable : 0;
+		const liquid = this.state.liquidSelected ? cards.filter(item => item.type === 'liquidCard')[0].creditAvailable : 0;
+		return anywhere + liquid + student;
 	}
 
   render() {
