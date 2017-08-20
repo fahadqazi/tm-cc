@@ -99,6 +99,15 @@ class App extends Component {
 			anywhereCard: this.anywhereCard(data),
 			liquidCard: this.liquidCard(data),
 		})
+		this.resetCards();
+	}
+
+	resetCards(){
+		this.setState({
+			anywhereSelected: false,
+			studentSelected: false,
+			liquidSelected: false
+		})
 	}
 
 	add(data){
