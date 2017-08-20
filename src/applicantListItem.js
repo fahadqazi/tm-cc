@@ -8,7 +8,7 @@ class ApplicantCard extends React.Component{
   }
 
   calculator(){
-    this.props.calculateCards(this.props.data)
+    this.props.checkCardEligibility(this.props.data)
   }
 
   render(){

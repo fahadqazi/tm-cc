@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import ApplicantList from './applicantList'
-
 import CardList from './CardList';
-
+import TotalValue from './TotalValue';
+import Footer from './Footer';
 
 var cards = [
 	{
@@ -80,28 +79,28 @@ class App extends Component {
 		}
 	}
 
-	studentCard(data){
-		return data.employment === 'Student'
+	studentCard(applicant){
+		return applicant.employment === 'Student'
 	}
 
-	anywhereCard(data){
+	anywhereCard(applicant){
 		return true
 	}
 
-	liquidCard(data){
-		return data.income > 16000
+	liquidCard(applicant){
+		return applicant.income > 16000
 	}
 
-	calculateCards = (data) => {
+	checkCardEligibility = (applicant) => {
 		this.setState({
-			studentCard: this.studentCard(data),
-			anywhereCard: this.anywhereCard(data),
-			liquidCard: this.liquidCard(data),
+			studentCard: this.studentCard(applicant),
+			anywhereCard: this.anywhereCard(applicant),
+			liquidCard: this.liquidCard(applicant),
 		})
-		this.resetCards();
+		this.resetApplicantCards();
 	}
 
-	resetCards(){
+	resetApplicantCards(){
 		this.setState({
 			anywhereSelected: false,
 			studentSelected: false,
@@ -143,10 +142,10 @@ class App extends Component {
     return (
 			<div className='app-container'>
 
-					<ApplicantList 
-						data={applicants}
-						calculateCards={this.calculateCards}
-					/>
+				<ApplicantList 
+					data={applicants}
+					checkCardEligibility={this.checkCardEligibility}
+				/>
 
 				<hr/>
 				
@@ -160,16 +159,14 @@ class App extends Component {
 
 				<hr/>
 
-				<div>
-					<h3>{`Total Credit Available: ${this.calculateTotal()}`}</h3>
-				</div>
+				<TotalValue 
+					calculateTotal={this.calculateTotal.bind(this)}
+				/>
+
 				<hr/>
-				<h3>Steps: </h3>
-				<ol>
-					<li>Click on a name card to see eligible cards</li>
-					<li>Select/unselect credit cards by clicking on them, watch total credit value change</li>
-					<li>Excuse the poor design &#9786;</li>
-				</ol>
+				
+				<Footer />
+
       </div>
     );
   }

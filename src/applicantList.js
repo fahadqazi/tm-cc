@@ -9,7 +9,7 @@ class ApplicantList extends React.Component{
       return (<ApplicantListItem 
                 data={item}
                 key={item.houseNo}
-                calculateCards={this.props.calculateCards}
+                checkCardEligibility={this.props.checkCardEligibility}
             />)
     })
   }
