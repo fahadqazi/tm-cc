@@ -163,6 +163,13 @@ class App extends Component {
 				<div>
 					<h3>{`Total Credit Available: ${this.calculateTotal()}`}</h3>
 				</div>
+				<hr/>
+				<h3>Steps: </h3>
+				<ol>
+					<li>Click on a name card to see eligible cards</li>
+					<li>Select/unselect credit cards by clicking on them, watch total credit value change</li>
+					<li>Excuse the poor design &#9786;</li>
+				</ol>
       </div>
     );
   }
