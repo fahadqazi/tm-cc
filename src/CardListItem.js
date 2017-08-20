@@ -57,7 +57,6 @@ class CardListItem extends React.Component{
             <p>{`Credit Available: £${this.props.card.creditAvailable}`}</p>
           </div>
         </div>
-
           : null}
       </div>
 
