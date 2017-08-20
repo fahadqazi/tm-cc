@@ -16,6 +16,7 @@ class CardList extends React.Component{
     })
   }
 
+  //TODO: fix styling
   render(){
     return(
       <div style={{display: 'flex', flexDirection: 'row'}}>

@@ -2,6 +2,7 @@ import React from 'react';
 
 class CardListItem extends React.Component{
 
+  //todo: rename 
   checkType(type){
     switch(type){
       case 'studentCard':
@@ -15,10 +16,13 @@ class CardListItem extends React.Component{
     }
   }
 
+
+  //todo: name? use? 
   styling(){
     this.props.add(this.props.card)
   }
 
+  //todo: rename 
   styleCase(style){
     switch(style){
       case 'anywhereCard': 
@@ -32,6 +36,7 @@ class CardListItem extends React.Component{
     }
   }
 
+  //rename
   makeClassName(){
     let style1 = this.checkType(this.props.card.type);
     let newRes = this.styleCase(this.props.card.type)
@@ -40,6 +45,7 @@ class CardListItem extends React.Component{
     return `${style1} ${style2}`;
   }
 
+  //todo: fix styling and function calls
   render(){
     const showCard = this.props.isShown
    

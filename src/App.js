@@ -108,6 +108,7 @@ class App extends Component {
 		})
 	}
 
+	// TODO: rename - refactor
 	add(data){
 		let type = data.type;
 		switch(type){

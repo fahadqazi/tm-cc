@@ -7,6 +7,7 @@ class ApplicantCard extends React.Component{
     this.calculator= this.calculator.bind(this);
   }
 
+  // todo: rename
   calculator(){
     this.props.checkCardEligibility(this.props.data)
   }
